@@ -14,7 +14,7 @@ Ao iniciar este projeto, você concorda com as diretrizes do Código de Conduta 
 
 <details>
   <summary>
-    <strong>🤷🏽‍♀️ Como entregar</strong>
+    <strong>🤷🏽‍♀️ Como entregar!</strong>
   </summary><br>
 
   - **Cada grupo terá uma branch específica** no formato `main-group-X`. Ex: `main-group-1`; `main-group-2`; etc;
