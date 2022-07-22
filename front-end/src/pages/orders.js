@@ -38,7 +38,9 @@ function Orders() {
       <Header
         leaveDataTestId="customer_products__element-navbar-link-logout"
         nameDataTestId="customer_products__element-navbar-user-full-name"
-        productsDataTestid="customer_products__element-navbar-link-products"
+        productsDataTestid={ userData.role === 'customer'
+          ? 'customer_products__element-navbar-link-products'
+          : 'customer_products__element-navbar-link-orders' }
       />
       <section className="order__container">
         {

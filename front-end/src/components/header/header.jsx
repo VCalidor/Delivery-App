@@ -8,6 +8,11 @@ import './style.css';
 const Header = ({ productsDataTestid, nameDataTestId, leaveDataTestId }) => {
   const navigate = useNavigate();
   const { userData: { role, name }, setCart } = useContext(AppContext);
+  const route = () => {
+    if (role === 'customer') return '/customer/products';
+    if (role === 'seller') return '/seller/orders';
+    if (role === 'administrator') return '/admin/manage';
+  };
   const whichRole = () => {
     if (role === 'customer') return 'Produtos';
     if (role === 'seller') return 'Pedidos';
@@ -24,27 +29,21 @@ const Header = ({ productsDataTestid, nameDataTestId, leaveDataTestId }) => {
     <nav className="header">
       <div className="left-side">
         {
-          <button
-            type="button"
+          <a
             data-testid={ productsDataTestid }
-            onClick={ () => {
-              if (role === 'customer') navigate('/customer/products');
-              if (role === 'seller') navigate('/seller/orders');
-              if (role === 'administrator') navigate('/admin/manage');
-            } }
+            href={ route() }
           >
             { whichRole() }
-          </button>
+          </a>
         }
         { role === 'customer' && (
-          <button
+          <a
+            href="/customer/orders"
             className="myProducts"
-            type="button"
             data-testid="customer_products__element-navbar-link-orders"
-            onClick={ () => navigate('/customer/orders') }
           >
             Meus Pedidos
-          </button>
+          </a>
         )}
       </div>
       <div className="right-side">
