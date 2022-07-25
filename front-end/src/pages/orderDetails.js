@@ -62,9 +62,7 @@ function OrderDetails() {
             orderStatusDataTest={
               `${role}_order_details__element-order-details-label-delivery-status`
             }
-            deliveryCheckDataTest={
-              `${role}_order_details__button-delivery-check`
-            }
+            deliveryCheckDataTest="customer_order_details__button-delivery-check"
             dispatchCheckDataTest={
               `${role}_order_details__button-dispatch-check`
             }

@@ -7,6 +7,7 @@ const scriptSuffix = environment === "test" ? "-test" : "-dev";
 
 const executeSequelize = async () => {
   const { stderr } = await exec(`./scripts/reset-db${scriptSuffix}.sh`);
+  // use ( && !process.env.DEBUG) to debug
   if (stderr) throw new Error(stderr);
   return true;
 };

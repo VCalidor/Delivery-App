@@ -27,11 +27,15 @@ const orderCard = ({
 
       <div>
         <div>
-          <p data-testid={ dateDataTest }>{ saleDate }</p>
+          <p data-testid={ dateDataTest }>
+            { new Date(saleDate).toLocaleDateString('pt-BR') }
+          </p>
         </div>
 
         <div>
-          <p data-testid={ priceDataTest }>{ totalPrice }</p>
+          <p data-testid={ priceDataTest }>
+            { totalPrice.toString().replaceAll('.', ',') }
+          </p>
         </div>
       </div>
     </div>
